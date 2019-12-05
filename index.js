@@ -9,6 +9,7 @@ server.use((req, res, next) => {
     next();
 });
 
+//MIDLE
 function checkScrap(req, res, next) {
     const {id} = req.params;
     const scrap = scraps.find(scrap => scrap.id == id);
@@ -66,7 +67,7 @@ server.put("/scraps/:id", checkScrap, (req, res) => {
 });
 
 server.delete("/scraps/:id", checkScrap, (req, res) => {
-    const {id} = req.body;
+    const {id} = req.params;
 
     const scrapIndex = scraps.findIndex(scrap => scrap.id == id);
 
