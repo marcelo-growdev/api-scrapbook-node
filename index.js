@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 
 const server = express();
 
@@ -8,6 +9,7 @@ server.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
+    console.log(process.env.TESTE);
     next();
 });
 
@@ -79,4 +81,4 @@ server.delete("/scraps/:id", checkScrap, (req, res) => {
 });
 
 
-server.listen(3333);
+server.listen(process.env.PORT);
