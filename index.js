@@ -98,6 +98,7 @@ server.put("/scraps/:id", checkScrap, (req, res) => {
         .then(update => {
             console.log(update);
         });
+        //teste
     };
 
     return res.json(scrap);
